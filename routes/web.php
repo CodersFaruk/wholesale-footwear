@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\frontend\FrontendController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 ============================================*/
 Route::group(['prefix'=>'admin','middleware' =>['admin','auth'],'namespace'=>'admin'], function(){
     Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+//    Category Routes
+    Route::get('addcategory',[CategoryController::class,'index'])->name('admin.addcategory');
+    Route::post('store',[CategoryController::class,'store'])->name('category.store');
+    Route::get('show',[CategoryController::class,'show'])->name('show.category');
+//    Route::get('addcategory',[CategoryController::class,'index'])->name('admin.addcategory');
 });
 
 /*===========================================
