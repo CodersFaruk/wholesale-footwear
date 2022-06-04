@@ -48,11 +48,16 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate(
+            [
+                'category_name' => 'required|unique:categories|max:191',
+            ]
+        );
 
         $category = Category::findOrFail($id);
         $category->category_name = $request->category_name;
         $category->save();
-        return redirect()->route('admin.category.show');
+        return redirect()->route('show.category');
 
     }
 }

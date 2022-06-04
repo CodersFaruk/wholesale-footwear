@@ -32,7 +32,7 @@
                                <td>{{$key+1}}</td>
                                <td>{{$category->category_name}}</td>
                                <td>
-                                   <a class="btn btn-sm btn-info" href="#">edit</a>
+                                   <a class="btn btn-sm btn-info" href="{{route('edit.category',$category->id)}}">edit</a>
                                    <a class="btn btn-sm btn-danger" href="#">delete</a>
                                </td>
                            </tr>

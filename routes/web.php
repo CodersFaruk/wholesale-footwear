@@ -23,7 +23,8 @@ Route::group(['prefix'=>'admin','middleware' =>['admin','auth'],'namespace'=>'ad
     Route::get('addcategory',[CategoryController::class,'index'])->name('admin.addcategory');
     Route::post('store',[CategoryController::class,'store'])->name('category.store');
     Route::get('show',[CategoryController::class,'show'])->name('show.category');
-//    Route::get('addcategory',[CategoryController::class,'index'])->name('admin.addcategory');
+    Route::get('editcategory/{id}',[CategoryController::class,'edit'])->name('edit.category');
+    Route::post('updatecategory/{id}',[CategoryController::class,'update'])->name('category.update');
 });
 
 /*===========================================
