@@ -18,6 +18,7 @@
     <link href="{{asset('backend')}}/lib/highlightjs/github.css" rel="stylesheet">
     <link href="{{asset('backend')}}/lib/select2/css/select2.min.css" rel="stylesheet">
     <link href="{{asset('backend')}}/lib/datatables/jquery.dataTables.css" rel="stylesheet">
+    <link href="{{asset('backend')}}/lib/summernote/summernote-bs4.css" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('backend')}}/css/starlight.css">
@@ -53,6 +54,7 @@
 
 <script src="{{asset('backend')}}/lib/datatables/jquery.dataTables.js"></script>
 <script src="{{asset('backend')}}/lib/datatables-responsive/dataTables.responsive.js"></script>
+<script src="{{asset('backend')}}/lib/summernote/summernote-bs4.min.js"></script>
 
 <script src="{{asset('backend')}}/js/starlight.js"></script>
 <script src="{{asset('backend')}}/js/ResizeSensor.js"></script>
@@ -68,6 +70,13 @@
             lengthMenu: '_MENU_ items/page',
         }
     });
+</script>
+
+<script>
+    $('#summernote').summernote({
+        height: 150,
+        tooltip: false
+    })
 </script>
 
 </body>

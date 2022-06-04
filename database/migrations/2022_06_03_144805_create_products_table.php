@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->integer('cat_id');
+            $table->string('product_code');
             $table->string('product_price');
-            $table->string('product_details');
+            $table->longText('product_details');
             $table->string('product_size');
             $table->string('product_image');
             $table->timestamps();

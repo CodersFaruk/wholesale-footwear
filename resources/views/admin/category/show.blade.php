@@ -22,7 +22,8 @@
                         <tr>
                             <th class="wd-15p">S.N</th>
                             <th class="wd-15p">Category Name</th>
-                            <th class="wd-20p">Action</th>
+                            <th class="wd-15p">Update</th>
+                            <th class="wd-15p">Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -32,8 +33,14 @@
                                <td>{{$key+1}}</td>
                                <td>{{$category->category_name}}</td>
                                <td>
-                                   <a class="btn btn-sm btn-info" href="{{route('edit.category',$category->id)}}">edit</a>
-                                   <a class="btn btn-sm btn-danger" href="#">delete</a>
+                                   <a class="btn btn-sm btn-outline-info" href="{{route('edit.category',$category->id)}}">Edit Category</a>
+                               </td>
+                               <td>
+                                   <form action="{{ route('delete.category',$category->id) }}" method="POST">
+                                       {{method_field('DELETE')}}
+                                       @csrf
+                                       <button type="submit" class="btn btn-sm btn-outline-danger">Remove Category</button>
+                                   </form>
                                </td>
                            </tr>
                            @endforeach
